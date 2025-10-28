@@ -4,36 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Organização voluntáriado</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
-        <h1>Como é a nossa Organização</h1>
         <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a> </li>
-                <li><a href="projeto.html">Projeto de voluntariado</a> </li>
-                <li><a href="cadastro.html">Cadastro de voluntariado</a> </li>
+            <div class="logo">&#128153; Voluntarios</div>
+            <button class="menu-toggle" onclick="toggleMenu()">&#9776;</button>
+            <ul id="navMenu">
+                <li><a href="index.html" class="active">Inicio</a> </li>
+                <li><a href="projeto.html">Projetos</a> </li>
+                <li><a href="cadastro.html">Seja voluntario</a> </li>
             </ul>
         </nav>
     </header>
 
-    <main>
-        <section>
+    <section class="hero">
+            <div class="hero-content">
+                <h1>Transforme vidas com voluntariado</h1>
+                <p>somos uma organização dedicada a inclusao social e ao atendimento de familia. Junte-se a nós e faça a diferença.</p>
+                <a href="cadastro.html" class="btn-primary">Quero ser voluntario</a>
+            </div>
+        </section>
+
+        <section class="about">
             <h2>Quem somos</h2>
-            <p>Somos uma organização sem fins lucrativos que atua em atendimento de familias de inclusão social</p>
-            <img src="imagem/voluntario.jpg" alt="voluntarios em ação">
-        </section>
-        <section>
-            <h3>Fale conosco!</h3>
-            <address>
-                <p>Endereço: Passagem loco, 123 - Bairro: doido - Cidade: São Paulo </p>
-                <p>Telefone: (11) 1234-1234</p>
-                <p>Email: contato@doido.org.com</p>
-            </address>
-        </section>
-    </main>
+            <p>Somos uma organização sem fins luctarivos que atua no atendimento de familias em inclusao social, promovendo  felicidade</p></section>
+   
     <footer>
         <p>&copy; 2025 organização de voluntarios</p>
+        <p>Feito com &#10084;&#65039; para transformar vidas</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
 </html> 
