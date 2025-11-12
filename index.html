@@ -3,44 +3,298 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Organização de Voluntários - Início</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Anjos de Sangue ADS - Salve Vidas, Doe Sangue</title>
+    <meta name="description" content="ONG Anjos de Sangue ADS. Conscientização sobre a importância da doação de sangue. Encontre o hemocentro mais próximo e salve vidas.">
+    <!-- Tailwind CSS via CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração de Cores do Tailwind -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        // Paleta de cores baseada na sua ideia (vermelho e branco)
+                        'sangue': '#A50000', // Vermelho principal (logo, botões)
+                        'sangue-escuro': '#800000', // Para hover ou detalhes
+                        'fundo-claro': '#F8F8F8', // Fundo levemente cinza
+                        'texto-base': '#333333',
+                    }
+                }
+            }
+        }
+    </script>
+    <!-- Estilo da Fonte (Inter) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #F8F8F8; /* Fundo-claro */
+        }
+        /* Classe para simular o nível da bolsa de sangue */
+        .blood-level::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background-color: #A50000; /* Cor 'sangue' */
+            border-radius: 0 0 1rem 1rem;
+            transition: height 0.5s ease-in-out;
+        }
+        /* Níveis de estoque (Exemplos) */
+        .level-critico::after { height: 20%; }
+        .level-alerta::after { height: 45%; }
+        .level-suficiente::after { height: 75%; }
+    </style>
 </head>
-<body>
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">&#128153; Voluntários</div>
-            <button class="menu-toggle" onclick="toggleMenu()">☰</button>
-            <ul id="navMenu">
-                <li><a href="index.html" class="active">Início</a></li>
-                <li><a href="projeto.html">Projetos</a></li>
-                <li><a href="cadastro.html">Seja Voluntário</a></li>
+<body class="text-texto-base">
 
+    <!-- Cabeçalho e Navegação -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+        <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo e Nome da ONG -->
+            <h1 class="text-xl md:text-2xl font-bold text-sangue flex items-center">
+                <!-- LOGO SVG (Gota com Cruz Branca) -->
+                <svg class_="" width="32" height="32" viewBox="0 0 100 125" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
+                    <!-- Gota de Sangue (Cor Principal) -->
+                    <path d="M50 115C50 115 85 80.5 85 50C85 27.9086 69.1421 10 50 10C30.8579 10 15 27.9086 15 50C15 80.5 50 115 50 115Z" fill="#A50000"/>
+                    <!-- Cruz Branca (Centralizada) -->
+                    <path d="M58 46H54V42C54 40.8954 53.1046 40 52 40H48C46.8954 40 46 40.8954 46 42V46H42C40.8954 46 40 46.8954 40 48V52C40 53.1046 40.8954 54 42 54H46V58C46 59.1046 46.8954 60 48 60H52C53.1046 60 54 59.1046 54 58V54H58C59.1046 54 60 53.1046 60 52V48C60 46.8954 59.1046 46 58 46Z" fill="white"/>
+                </svg>
+                Anjos de Sangue ADS
+            </h1>
+            <!-- Links de Navegação -->
+            <ul class="flex space-x-4 md:space-x-6">
+                <li><a href="index.html" class="text-sangue font-semibold border-b-2 border-sangue pb-1">Início</a></li>
+                <li><a href="projetos.html" class="text-gray-600 hover:text-sangue transition-colors">Projetos</a></li>
+                <li><a href="cadastro.html" class="text-gray-600 hover:text-sangue transition-colors">Cadastro</a></li>
             </ul>
         </nav>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero">
-        <div class="hero-content">
-            <h1>Transforme Vidas com Voluntariado</h1>
-            <p>Somos uma organização dedicada à inclusão social e ao atendimento de famílias. Junte-se a nós e faça a diferença!</p>
-            <a href="cadastro.html" class="btn-primary">Quero Ser Voluntário</a>
-            </div>
-    </section> 
-    <!-- Quem Somos -->
-    <section class="about">
-        <h2>Quem Somos</h2>
-        <p>Somos uma organização sem fins lucrativos que atua no atendimento de famílias em inclusão social, promovendo dignidade, esperança e oportunidades para quem mais precisa.</p>
+    <!-- Conteúdo Principal -->
+    <main>
         
-    </section>  
- 
-    <footer>
-        <p>&copy; 2025 Organização de Voluntários. Todos os direitos reservados.</p>
-     <p>Feito com &#10084;&#65039; para transformar vidas</p>
+        <!-- Seção Hero (Banner Principal) -->
+        <section class="bg-white py-16 md:py-24">
+            <div class="container mx-auto px-4 grid md:grid-cols-2 gap-8 items-center">
+                <!-- Texto da Seção Hero -->
+                <div class="text-center md:text-left">
+                    <h2 class="text-3xl md:text-5xl font-bold text-sangue leading-tight">
+                        Seja um Anjo.
+                        <span class="block text-texto-base text-2xl md:text-4xl mt-2">Doe sangue, salve vidas.</span>
+                    </h2>
+                    <p class="mt-6 text-lg text-gray-700">
+                        A ONG Anjos de Sangue ADS conecta pessoas dispostas a ajudar com quem mais precisa. 
+                        Sua doação é um ato de amor que pode salvar até quatro vidas.
+                    </p>
+                    <a href="cadastro.html" class="mt-8 inline-block bg-sangue text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg hover:bg-sangue-escuro transition-colors transform hover:scale-105">
+                        Quero ser um Doador
+                    </a>
+                </div>
+                <!-- Imagem Ilustrativa (Placeholder) -->
+                <div>
+                    <img src="imagem/doacao.png" 
+                         alt="Ilustração de uma pessoa doando sangue" 
+                         class="rounded-lg shadow-xl mx-auto">
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Status do Estoque de Sangue -->
+        <section class="py-16 bg-fundo-claro">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-texto-base mb-4">Situação Atual dos Estoques</h2>
+                <p class="text-lg text-gray-700 mb-10 max-w-2xl mx-auto">
+                    Nossos hemocentros parceiros precisam da sua ajuda! Veja quais tipos sanguíneos estão com 
+                    estoque baixo e agende sua doação.
+                </p>
+                
+                <!-- Grid das Bolsas de Sangue (Simulação) -->
+                <div class="grid grid-cols-2 sm:grid-cols-4 md:grid-cols-8 gap-4 max-w-4xl mx-auto">
+                    <!-- Tipo O- (Crítico) -->
+                    <div class="text-center">
+                        <div class="relative w-20 h-28 mx-auto bg-white border-4 border-gray-300 rounded-2xl rounded-t-lg overflow-hidden blood-level level-critico">
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 z-10 font-bold text-xl text-white mix-blend-difference">O-</span>
+                        </div>
+                        <p class="mt-2 font-semibold text-red-600">Crítico</p>
+                    </div>
+                    
+                    <!-- Tipo O+ (Alerta) -->
+                    <div class="text-center">
+                        <div class="relative w-20 h-28 mx-auto bg-white border-4 border-gray-300 rounded-2xl rounded-t-lg overflow-hidden blood-level level-alerta">
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 z-10 font-bold text-xl text-white mix-blend-difference">O+</span>
+                        </div>
+                        <p class="mt-2 font-semibold text-yellow-600">Alerta</p>
+                    </div>
+
+                    <!-- Tipo A- (Suficiente) -->
+                    <div class="text-center">
+                        <div class="relative w-20 h-28 mx-auto bg-white border-4 border-gray-300 rounded-2xl rounded-t-lg overflow-hidden blood-level level-suficiente">
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 z-10 font-bold text-xl text-white mix-blend-difference">A-</span>
+                        </div>
+                        <p class="mt-2 font-semibold text-green-600">Suficiente</p>
+                    </div>
+                    
+                    <!-- Tipo A+ (Suficiente) -->
+                    <div class="text-center">
+                        <div class="relative w-20 h-28 mx-auto bg-white border-4 border-gray-300 rounded-2xl rounded-t-lg overflow-hidden blood-level level-suficiente">
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 z-10 font-bold text-xl text-white mix-blend-difference">A+</span>
+                        </div>
+                        <p class="mt-2 font-semibold text-green-600">Suficiente</p>
+                    </div>
+                    
+                    <!-- Tipo B- (Alerta) -->
+                    <div class="text-center">
+                        <div class="relative w-20 h-28 mx-auto bg-white border-4 border-gray-300 rounded-2xl rounded-t-lg overflow-hidden blood-level level-alerta">
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 z-10 font-bold text-xl text-white mix-blend-difference">B-</span>
+                        </div>
+                        <p class="mt-2 font-semibold text-yellow-600">Alerta</p>
+                    </div>
+                    
+                    <!-- Tipo B+ (Suficiente) -->
+                    <div class="text-center">
+                        <div class="relative w-20 h-28 mx-auto bg-white border-4 border-gray-300 rounded-2xl rounded-t-lg overflow-hidden blood-level level-suficiente">
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 z-10 font-bold text-xl text-white mix-blend-difference">B+</span>
+                        </div>
+                        <p class="mt-2 font-semibold text-green-600">Suficiente</p>
+                    </div>
+
+                    <!-- Tipo AB- (Crítico) -->
+                    <div class="text-center">
+                        <div class="relative w-20 h-28 mx-auto bg-white border-4 border-gray-300 rounded-2xl rounded-t-lg overflow-hidden blood-level level-critico">
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 z-10 font-bold text-xl text-white mix-blend-difference">AB-</span>
+                        </div>
+                        <p class="mt-2 font-semibold text-red-600">Crítico</p>
+                    </div>
+                    
+                    <!-- Tipo AB+ (Suficiente) -->
+                    <div class="text-center">
+                        <div class="relative w-20 h-28 mx-auto bg-white border-4 border-gray-300 rounded-2xl rounded-t-lg overflow-hidden blood-level level-suficiente">
+                            <span class="absolute top-2 left-1/2 -translate-x-1/2 z-10 font-bold text-xl text-white mix-blend-difference">AB+</span>
+                        </div>
+                        <p class="mt-2 font-semibold text-green-600">Suficiente</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção Localizador de Hemocentro (Sua ideia do CEP) -->
+        <section class="bg-white py-16">
+            <div class="container mx-auto px-4 max-w-lg">
+                <!-- Card do Formulário -->
+                <div class="bg-white p-8 rounded-lg shadow-2xl border border-gray-100">
+                    <h2 class="text-2xl md:text-3xl font-bold text-sangue text-center mb-6">
+                        Encontre o Local de Doação Mais Próximo
+                    </h2>
+                    
+                    <!-- Formulário de Busca por CEP -->
+                    <form id="cepForm">
+                        <label for="cep" class="block text-lg font-semibold text-gray-700 mb-2">Digite seu CEP</label>
+                        <input type="text" id="cep" name="cep" 
+                               class="w-full px-4 py-3 border border-gray-300 rounded-lg text-lg focus:outline-none focus:ring-2 focus:ring-sangue"
+                               placeholder="Ex: 00000-000" 
+                               maxlength="9" 
+                               required>
+                        
+                        <button type="submit" 
+                                class="w-full mt-6 bg-sangue text-white font-bold py-3 px-8 rounded-lg text-lg shadow-lg hover:bg-sangue-escuro transition-colors transform hover:scale-105">
+                            Buscar Hemocentro
+                        </button>
+                    </form>
+                    
+                    <!-- Área de Resultado (Inicialmente oculta) -->
+                    <div class="mt-6 hidden" id="resultadoBusca">
+                        <h3 class="text-lg font-semibold text-gray-800 mb-2">Hemocentro Mais Próximo:</h3>
+                        
+                        <!-- IMAGEM LOCAL ATUALIZADA -->
+                        <!-- Esta imagem será carregada da pasta 'imagem' do seu projeto -->
+                        <img src="imagem/mapa.png" 
+                             alt="Mapa com a localização do hemocentro mais próximo" 
+                             class="w-full h-auto object-cover rounded-lg shadow-md border border-gray-200">
+                        <!-- FIM DA IMAGEM ATUALIZADA -->
+
+                        <!-- Informações do Local (Simulado) -->
+                        <div class="mt-4 bg-white p-4 rounded-lg shadow-sm border border-gray-200">
+                            <h4 class="font-bold text-sangue-escuro">Hemocentro Central (Simulado)</h4>
+                            <p class="text-gray-700">Rua da Doação, 123 - Centro</p>
+                            <p class="text-gray-700">Telefone: (11) 99999-8888</p>
+                            <a href="#" class="inline-block mt-2 text-sangue font-semibold hover:underline">Ver no mapa &rarr;</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção de Contato -->
+        <section class="bg-fundo-claro py-16">
+            <div class="container mx-auto px-4 text-center">
+                <h2 class="text-3xl font-bold text-texto-base mb-10">Fale Conosco</h2>
+                <div class="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+                    <!-- Card Contato: E-mail -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <svg class="w-12 h-12 text-sangue mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">E-mail</h3>
+                        <p class="text-gray-700">Tem dúvidas ou sugestões?</p>
+                        <a href="mailto:contato@anjosdesangue.org.br" class="text-sangue font-semibold hover:underline">contato@anjosdesangue.org.br</a>
+                    </div>
+                    <!-- Card Contato: WhatsApp -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <svg class="w-12 h-12 text-sangue mx-auto mb-4" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><path d="M10.707 2.293a1 1 0 00-1.414 0l-7 7a1 1 0 001.414 1.414L4 10.414V17a1 1 0 001 1h2a1 1 0 001-1v-2a1 1 0 011-1h2a1 1 0 011 1v2a1 1 0 001 1h2a1 1 0 001-1v-6.586l.293.293a1 1 0 001.414-1.414l-7-7z"></path></svg> <!-- Ícone placeholder, idealmente seria um de WhatsApp -->
+                        <h3 class="text-xl font-semibold mb-2">WhatsApp</h3>
+                        <p class="text-gray-700">Informações rápidas.</p>
+                        <a href="#" class="text-sangue font-semibold hover:underline">(11) 91234-5678</a>
+                    </div>
+                    <!-- Card Contato: Endereço -->
+                    <div class="bg-white p-6 rounded-lg shadow-lg text-center">
+                        <svg class="w-12 h-12 text-sangue mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.828 0L6.343 16.657a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <h3 class="text-xl font-semibold mb-2">Sede (Simbólica)</h3>
+                        <p class="text-gray-700">Av. Paulista, 1000</p>
+                        <p class="text-gray-700">São Paulo - SP, 01310-100</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-texto-base text-white py-8">
+        <div class="container mx-auto px-4 text-center">
+            <p>&copy; 2024 Anjos de Sangue ADS. Todos os direitos reservados.</p>
+            <p class="mt-2 text-sm text-gray-300">Projeto Acadêmico - Multimídia</p>
+        </div>
     </footer>
 
-    <script src="script.js"></script>
+    <!-- Script para Interatividade do Formulário de CEP -->
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const cepForm = document.getElementById('cepForm');
+            const resultadoBusca = document.getElementById('resultadoBusca');
+            const cepInput = document.getElementById('cep');
+
+            // Máscara de CEP (00000-000)
+            cepInput.addEventListener('input', (e) => {
+                let value = e.target.value.replace(/\D/g, ''); // Remove tudo que não é dígito
+                if (value.length > 5) {
+                    value = value.substring(0, 5) + '-' + value.substring(5, 8);
+                }
+                e.target.value = value;
+            });
+
+            // Simulação de busca
+            cepForm.addEventListener('submit', (e) => {
+                e.preventDefault(); // Impede o envio real do formulário
+                if (cepInput.value.length === 9) { // Verifica se o CEP está completo
+                    // Mostra a seção de resultados (que agora contém sua imagem mapa.png)
+                    resultadoBusca.classList.remove('hidden');
+                } else {
+                    alert('Por favor, digite um CEP válido.'); // Feedback simples
+                }
+            });
+        });
+    </script>
+
 </body>
 </html>
