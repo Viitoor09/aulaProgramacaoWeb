@@ -56,12 +56,17 @@
         <nav class="container mx-auto px-4 py-3 flex justify-between items-center">
             <!-- Logo e Nome da ONG -->
             <h1 class="text-xl md:text-2xl font-bold text-sangue flex items-center">
-                <!-- LOGO SVG (Gota com Cruz Branca) -->
-                <svg class_="" width="32" height="32" viewBox="0 0 100 125" fill="none" xmlns="http://www.w3.org/2000/svg" class="mr-2">
-                    <!-- Gota de Sangue (Cor Principal) -->
-                    <path d="M50 115C50 115 85 80.5 85 50C85 27.9086 69.1421 10 50 10C30.8579 10 15 27.9086 15 50C15 80.5 50 115 50 115Z" fill="#A50000"/>
-                    <!-- Cruz Branca (Centralizada) -->
-                    <path d="M58 46H54V42C54 40.8954 53.1046 40 52 40H48C46.8954 40 46 40.8954 46 42V46H42C40.8954 46 40 46.8954 40 48V52C40 53.1046 40.8954 54 42 54H46V58C46 59.1046 46.8954 60 48 60H52C53.1046 60 54 59.1046 54 58V54H58C59.1046 54 60 53.1046 60 52V48C60 46.8954 59.1046 46 58 46Z" fill="white"/>
+               <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" class="w-7 h-7 mr-2">
+                    <!-- Fundo da Gota (Vermelho Escuro) -->
+                <path 
+                d="M 50,10 C 80,10 90,40 80,60 C 70,80 50,95 50,95 C 50,95 30,80 20,60 C 10,40 20,10 50,10 Z"
+                fill="#A50000"
+                />
+                    <!-- Cruz Branca no Meio -->
+                <g transform="translate(50, 55) scale(0.6)">
+                <line x1="-30" y1="0" x2="30" y2="0" stroke="white" stroke-width="10" stroke-linecap="round" fill="none" />
+                <line x1="0" y1="-30" x2="0" y2="30" stroke="white" stroke-width="10" stroke-linecap="round" fill="none" />
+                </g>
                 </svg>
                 Anjos de Sangue ADS
             </h1>
@@ -262,7 +267,7 @@
     <!-- Rodapé -->
     <footer class="bg-texto-base text-white py-8">
         <div class="container mx-auto px-4 text-center">
-            <p>&copy; 2024 Anjos de Sangue ADS. Todos os direitos reservados.</p>
+            <p>&copy; 2025 Anjos de Sangue ADS. Todos os direitos reservados.</p>
             <p class="mt-2 text-sm text-gray-300">Projeto Acadêmico - Multimídia</p>
         </div>
     </footer>
