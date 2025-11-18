@@ -1,13 +1,3 @@
-/* Anjos de Sangue ADS - Scripts (Entrega IV)
-   ==========================================
-   1. Roteador e Carregamento de Conteúdo (SPA)
-   2. Manipulação do DOM (Funções de Inicialização)
-   3. Verificação de Consistência (Validação WCAG)
-   4. Componentes (Modal, Menu, Acessibilidade)
-*/
-
-// --- 4. Componentes de Acessibilidade (Entrega IV) ---
-
 /**
  * Prende o foco do teclado dentro de um elemento (para Modais).
  * @param {HTMLElement} element - O elemento que deve conter o foco.
