@@ -1,0 +1,134 @@
+<!-- Seção Hero (Banner Principal) - CSS Grid -->
+<section class="hero-section section-bg">
+    <div class="container grid">
+        <!-- Texto (CSS Grid col-6) -->
+        <div class="col-6 col-md-12 col-sm-12 hero-text">
+            <!-- Título principal da página, receberá foco -->
+            <h1>Seja um Anjo.</h1>
+            <h2>Doe sangue, salve vidas.</h2>
+            <p>A ONG Anjos de Sangue ADS conecta pessoas dispostas a ajudar com quem mais precisa. Sua doação é um ato de amor que pode salvar até quatro vidas.</p>
+            <a href="#cadastro" class="btn btn-primary">Quero ser um Doador</a>
+        </div>
+        <!-- Imagem (CSS Grid col-6) -->
+        <div class="col-6 col-md-12 col-sm-12 hero-image-wrapper">
+            <img src="imagem/doacao.png" alt="Braço de uma pessoa doando sangue, segurando uma bola anti-stress." class="hero-image">
+        </div>
+    </div>
+</section>
+
+<!-- Seção de Status do Estoque de Sangue -->
+<section class="estoque-section">
+    <div class="container">
+        <h2 class="text-center">Situação Atual dos Estoques</h2>
+        <p class="text-center section-subtitle">Nossos hemocentros parceiros precisam da sua ajuda! Veja quais tipos sanguíneos estão com estoque baixo.</p>
+        
+        <div class="grid">
+            <!-- Tipo O- (Crítico) -->
+            <div class="col-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card card-estoque">
+                    <h3>O-</h3>
+                    <span class="badge badge-critico">Crítico</span>
+                </div>
+            </div>
+            <!-- Tipo O+ (Alerta) -->
+            <div class="col-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card card-estoque">
+                    <h3>O+</h3>
+                    <span class="badge badge-alerta">Alerta</span>
+                </div>
+            </div>
+            <!-- Tipo A- (Suficiente) -->
+            <div class="col-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card card-estoque">
+                    <h3>A-</h3>
+                    <span class="badge badge-suficiente">Suficiente</span>
+                </div>
+            </div>
+            <!-- Tipo A+ (Suficiente) -->
+            <div class="col-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card card-estoque">
+                    <h3>A+</h3>
+                    <span class="badge badge-suficiente">Suficiente</span>
+                </div>
+            </div>
+            <!-- Tipo B- (Alerta) -->
+            <div class="col-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card card-estoque">
+                    <h3>B-</h3>
+                    <span class="badge badge-alerta">Alerta</span>
+                </div>
+            </div>
+            <!-- Tipo B+ (Suficiente) -->
+            <div class="col-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card card-estoque">
+                    <h3>B+</h3>
+                    <span class="badge badge-suficiente">Suficiente</span>
+                </div>
+            </div>
+            <!-- Tipo AB- (Crítico) -->
+            <div class="col-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card card-estoque">
+                    <h3>AB-</h3>
+                    <span class="badge badge-critico">Crítico</span>
+                </div>
+            </div>
+            <!-- Tipo AB+ (Suficiente) -->
+            <div class="col-3 col-md-4 col-sm-6 col-xs-12">
+                <div class="card card-estoque">
+                    <h3>AB+</h3>
+                    <span class="badge badge-suficiente">Suficiente</span>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Seção Localizador de Hemocentro (CEP) -->
+<section class="cep-section section-bg">
+    <div class="container">
+        <div class="form-container" style="max-width: 500px; margin: auto;">
+            <h2 class="text-center">Encontre o Local de Doação Mais Próximo</h2>
+            <form id="cepForm">
+                <div class="form-group">
+                    <label for="cep-index" class="form-label">Digite seu CEP</label>
+                    <input type="text" id="cep-index" class="form-control" placeholder="00000-000" maxlength="9" 
+                           required pattern="\d{5}-\d{3}" 
+                           aria-invalid="false" 
+                           aria-describedby="error-cep-index">
+                    <span class="error-message" id="error-cep-index">Por favor, insira um CEP válido (00000-000).</span>
+                </div>
+                <button type="submit" class="btn btn-primary">Buscar Hemocentro</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- Seção de Contato -->
+<section class="contato-section">
+    <div class="container">
+        <h2 class="text-center">Fale Conosco</h2>
+        <div class="grid">
+            <div class="col-4 col-md-12 col-sm-12">
+                <div class="card card-contato">
+                    <h3>E-mail</h3>
+                    <p>Tem dúvidas? Envie para</p>
+                    <a href="mailto:contato@anjosdesangue.ads">contato@anjosdesangue.ads</a>
+                </div>
+            </div>
+            <div class="col-4 col-md-12 col-sm-12">
+                <div class="card card-contato">
+                    <h3>WhatsApp</h3>
+                    <p>Informações rápidas</p>
+                    <strong>(11) 91234-5678</strong>
+                </div>
+            </div>
+            <div class="col-4 col-md-12 col-sm-12">
+                <div class="card card-contato">
+                    <h3>Sede (Simbólica)</h3>
+                    <p>Av. Paulista, 1000</p>
+                    <strong>São Paulo - SP</strong>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

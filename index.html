@@ -11,18 +11,20 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     
-    <!-- CSS Customizado (Entrega II) -->
-    <link rel="stylesheet" href="css/style.css">
+    <!-- CSS Customizado (Entrega IV) - Cache Busting -->
+    <link rel="stylesheet" href="css/style.css?v=1.6">
+
+    <!-- Favicon (Ícone da Aba) -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><title>Logo Anjos de Sangue</title><path d='M 50,10 C 80,10 90,40 80,60 C 70,80 50,95 50,95 C 50,95 30,80 20,60 C 10,40 20,10 50,10 Z' fill='%23A50000'/><g transform='translate(50, 55) scale(0.6)'><line x1='-30' y1='0' x2='30' y2='0' stroke='white' stroke-width='10' stroke-linecap='round' fill='none' /><line x1='0' y1='-30' x2='0' y2='30' stroke='white' stroke-width='10' stroke-linecap='round' fill='none' /></g></svg>">
 </head>
 <body>
 
-    <!-- Cabeçalho e Navegação -->
-    <header class="header">
-        <div class="container navbar">
+    <!-- Cabeçalho e Navegação (Sempre visível) -->
+    <header class="header" role="banner">
+        <nav class="container navbar" role="navigation" aria-label="Navegação principal">
             <!-- Logo -->
-            <a href="index.html" class="logo">
-                <!-- Logo SVG -->
-                <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
+            <a href="#inicio" class="logo">
+                <svg width="28" height="28" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
                     <path d="M 50,10 C 80,10 90,40 80,60 C 70,80 50,95 50,95 C 50,95 30,80 20,60 C 10,40 20,10 50,10 Z" fill="var(--color-primary)"/>
                     <g transform="translate(50, 55) scale(0.6)">
                         <line x1="-30" y1="0" x2="30" y2="0" stroke="white" stroke-width="10" stroke-linecap="round" fill="none" />
@@ -33,186 +35,53 @@
             </a>
             
             <!-- Menu Hambúrguer (Mobile) -->
-            <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menu">
-                &#9776; <!-- Símbolo de Hambúrguer -->
+            <button class="hamburger-btn" id="hamburger-btn" aria-label="Abrir menu" aria-expanded="false">
+                &#9776;
             </button>
 
-            <!-- Links de Navegação (Desktop) -->
+            <!-- Links de Navegação (AGORA USAM HASHES) -->
             <ul class="nav-links" id="nav-links">
-                <li><a href="index.html" class="active">Início</a></li>
-                <li><a href="projetos.html">Projetos</a></li>
-                <li><a href="cadastro.html">Cadastro</a></li>
+                <li><a href="#inicio" class="active">Início</a></li> 
+                <li><a href="#projetos">Projetos</a></li>
+                <li><a href="#cadastro">Cadastro</a></li>
             </ul>
-        </div>
+        </nav>
     </header>
 
-    <!-- Conteúdo Principal -->
-    <main>
-        
-        <!-- Seção Hero (Banner Principal) - CSS Grid -->
-        <section class="hero-section section-bg">
-            <div class="container grid">
-                <!-- Texto (CSS Grid col-6) -->
-                <!-- col-md-12: Em telas médias (md), ocupa 12 colunas (full) -->
-                <div class="col-6 col-md-12 col-sm-12 hero-text">
-                    <h1>Seja um Anjo.</h1>
-                    <h2>Doe sangue, salve vidas.</h2>
-                    <p>A ONG Anjos de Sangue ADS conecta pessoas dispostas a ajudar com quem mais precisa. Sua doação é um ato de amor que pode salvar até quatro vidas.</p>
-                    <a href="cadastro.html" class="btn btn-primary">Quero ser um Doador</a>
-                </div>
-                <!-- Imagem (CSS Grid col-6) -->
-                <div class="col-6 col-md-12 col-sm-12 hero-image-wrapper">
-                    <!-- Sua imagem local -->
-                    <img src="imagem/doacao.png" alt="Ilustração de uma pessoa doando sangue" class="hero-image">
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção de Status do Estoque de Sangue -->
-        <section class="estoque-section">
-            <div class="container">
-                <h2 class="text-center">Situação Atual dos Estoques</h2>
-                <p class="text-center section-subtitle">Nossos hemocentros parceiros precisam da sua ajuda! Veja quais tipos sanguíneos estão com estoque baixo.</p>
-                
-                <!-- Grid das Bolsas de Sangue (CSS Grid 12 colunas) -->
-                <!-- col-3: Ocupa 3 de 12 colunas (4 por linha) -->
-                <!-- col-md-4: Em telas médias, ocupa 4 de 12 (3 por linha) -->
-                <!-- col-sm-6: Em telas pequenas, ocupa 6 de 12 (2 por linha) -->
-                <!-- col-xs-12: Em telas extra-pequenas, ocupa 12 (1 por linha) -->
-                <div class="grid">
-                    <!-- Tipo O- (Crítico) -->
-                    <div class="col-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card card-estoque">
-                            <h3>O-</h3>
-                            <!-- Componente Badge -->
-                            <span class="badge badge-critico">Crítico</span>
-                        </div>
-                    </div>
-                    <!-- Tipo O+ (Alerta) -->
-                    <div class="col-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card card-estoque">
-                            <h3>O+</h3>
-                            <span class="badge badge-alerta">Alerta</span>
-                        </div>
-                    </div>
-                    <!-- Tipo A- (Suficiente) -->
-                    <div class="col-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card card-estoque">
-                            <h3>A-</h3>
-                            <span class="badge badge-suficiente">Suficiente</span>
-                        </div>
-                    </div>
-                    <!-- Tipo A+ (Suficiente) -->
-                    <div class="col-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card card-estoque">
-                            <h3>A+</h3>
-                            <span class="badge badge-suficiente">Suficiente</span>
-                        </div>
-                    </div>
-                    <!-- Tipo B- (Alerta) -->
-                    <div class="col-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card card-estoque">
-                            <h3>B-</h3>
-                            <span class="badge badge-alerta">Alerta</span>
-                        </div>
-                    </div>
-                    <!-- Tipo B+ (Suficiente) -->
-                    <div class="col-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card card-estoque">
-                            <h3>B+</h3>
-                            <span class="badge badge-suficiente">Suficiente</span>
-                        </div>
-                    </div>
-                    <!-- Tipo AB- (Crítico) -->
-                    <div class="col-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card card-estoque">
-                            <h3>AB-</h3>
-                            <span class="badge badge-critico">Crítico</span>
-                        </div>
-                    </div>
-                    <!-- Tipo AB+ (Suficiente) -->
-                    <div class="col-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="card card-estoque">
-                            <h3>AB+</h3>
-                            <span class="badge badge-suficiente">Suficiente</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Seção Localizador de Hemocentro (CEP) -->
-        <section class="cep-section section-bg">
-            <div class="container">
-                <!-- Formulário Estilizado -->
-                <div class="form-container" style="max-width: 500px; margin: auto;">
-                    <h2 class="text-center">Encontre o Local de Doação Mais Próximo</h2>
-                    <form id="cepForm">
-                        <div class="form-group">
-                            <label for="cep-index" class="form-label">Digite seu CEP</label>
-                            <input type="text" id="cep-index" class="form-control" placeholder="00000-000" maxlength="9" required>
-                        </div>
-                        <!-- Botão com Estados -->
-                        <button type="submit" class="btn btn-primary">Buscar Hemocentro</button>
-                    </form>
-                </div>
-            </div>
-        </section>
-
-        <!-- Seção de Contato -->
-        <section class="contato-section">
-            <div class="container">
-                <h2 class="text-center">Fale Conosco</h2>
-                <div class="grid">
-                    <!-- col-4: 4 de 12 (3 por linha) -->
-                    <div class="col-4 col-md-12 col-sm-12">
-                        <div class="card card-contato">
-                            <h3>E-mail</h3>
-                            <p>Tem dúvidas? Envie para</p>
-                            <a href="mailto:contato@anjosdesangue.ads">contato@anjosdesangue.ads</a>
-                        </div>
-                    </div>
-                    <div class="col-4 col-md-12 col-sm-12">
-                        <div class="card card-contato">
-                            <h3>WhatsApp</h3>
-                            <p>Informações rápidas</p>
-                            <strong>(11) 91234-5678</strong>
-                        </div>
-                    </div>
-                    <div class="col-4 col-md-12 col-sm-12">
-                        <div class="card card-contato">
-                            <h3>Sede (Simbólica)</h3>
-                            <p>Av. Paulista, 1000</p>
-                            <strong>São Paulo - SP</strong>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <!-- Conteúdo Principal (Será preenchido pelo JS) -->
+    <!-- aria-live="polite" avisa ao leitor de tela que o conteúdo mudou -->
+    <main id="app-content" role="main" aria-live="polite">
+        <div class="container" style="padding: 10rem 0; text-align: center;">
+            <h2 class="text-center">Carregando...</h2>
+        </div>
     </main>
 
-    <!-- Rodapé -->
-    <footer class="footer">
+    <!-- Rodapé (Sempre visível) -->
+    <footer class="footer" role="contentinfo">
         <div class="container">
             <p>&copy; 2025 Anjos de Sangue ADS. Todos os direitos reservados.</p>
             <p>Projeto Acadêmico - Multimídia</p>
         </div>
     </footer>
 
-    <!-- Componente Modal (Feedback) -->
-    <div class="modal-overlay" id="resultado-modal">
+    <!-- Componente Modal (Acessibilidade WCAG) -->
+    <div class="modal-overlay" id="resultado-modal" role="dialog" aria-modal="true" aria-labelledby="modal-title">
         <div class="modal-content">
             <button class="modal-close-btn" id="modal-close" aria-label="Fechar modal">&times;</button>
-            <h3>Hemocentro Mais Próximo (Simulado)</h3>
-            <!-- Sua imagem local -->
+            <h3 id="modal-title">Hemocentro Mais Próximo (Simulado)</h3>
             <img src="imagem/mapa.png" alt="Mapa com a localização do hemocentro mais próximo" class="image-modal">
             <h4>Hemocentro Central</h4>
             <p>Rua da Doação, 123 - Centro</p>
             <a href="#" class="btn btn-primary" style="margin-top: 1rem;">Ver no mapa</a>
         </div>
     </div>
+    
+    <!-- Componente Toast (Acessibilidade WCAG) -->
+    <div class="toast" id="success-toast" role="alert" aria-live="assertive">
+        Cadastro enviado com sucesso!
+    </div>
 
-    <!-- Script Customizado (Entrega II) -->
+    <!-- Script Customizado (Entrega IV) -->
     <script src="js/script.js" defer></script>
 </body>
 </html>
