@@ -1,4 +1,4 @@
-Anjos de Sangue ADS (Projeto de Multimídia)
+Anjos de Sangue ADS (Projeto de Desenvolvimento Front-End Para Web)
 
 Projeto acadêmico de front-end para a disciplina de Desenvolvimento Front-End Para Web . O objetivo foi construir um site para uma ONG fictícia de doação de sangue ("Anjos de Sangue ADS"), evoluindo de um HTML estático para uma Single Page Application (SPA) dinâmica, acessível e profissional.
 
